@@ -48,33 +48,34 @@
 
                                 <div>
                                     <label for="name" class="form-label fs-2 px-2">Income:</label>
-                                    <input type="text" class="bg-light" id="" />
+                                    <input type="number" class="bg-light" id="input-income" />
                                 </div>
 
                                 <h3 class="text-center py-3">Expenses</h3>
 
                                 <div>
                                     <label for="name" class="form-label px-3">Food:</label>
-                                    <input type="text" class="bg-light" id="" />
+                                    <input type="number" class="bg-light" id="food-expense" />
                                 </div>
 
 
                                 <div>
 
                                     <label for="name" class="form-label px-3">Rent:</label>
-                                    <input type="text" class="bg-light" id="" />
+                                    <input type="number" class="bg-light" id="rent-expense" />
                                 </div>
 
                                 <div>
 
                                     <label for="name" class="form-label px-2">Clothes:</label>
-                                    <input type="text" class="bg-light" id="" />
+                                    <input type="number" class="bg-light" id="cloth-expense" />
                                 </div>
 
-                                <button type="button" class="text-center btn btn-primary px-5 my-3">Calculate</button>
+                                <button type="button" id="calculate-btn"
+                                    class="text-center btn btn-primary px-5 my-3">Calculate</button>
 
-                                <h3 class="text-center py-1">Total Expenses: <span>00</span> </h3>
-                                <h3 class="text-center py-1">Balance: <span>00</span> </h3>
+                                <h3 class="text-center py-1">Total Expenses: <span id="total-expense">00</span> </h3>
+                                <h3 class="text-center py-1">Balance: <span id="total-balance">00</span> </h3>
 
                                 <div>
                                     <label for="name" class="form-label px-2">Save:</label>
