@@ -1,3 +1,17 @@
+body{
+    font-family: Roboto;
+}
+
 .heading-color{
-    color:#1ce7f1;
+    color:#1c55f1;
+    font-weight: bold;
+}
+
+.icon{
+    color :goldenrod;
+    padding-left: 5px;
+}
+
+img{
+   
 }
