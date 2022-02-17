@@ -47,9 +47,17 @@
                             <div class="text-center mb-3">
 
                                 <div>
-                                    <label for="name" class="form-label fs-2 px-2">Income:</label>
+                                    <label for="name" class="form-label fs-2 px-2">Income:
+                                    </label>
+
                                     <input type="number" placeholder="Enter income" class="bg-light"
-                                        id="input-income" />
+                                        list="datalistOptions" id="input-income" />
+                                    <datalist id="datalistOptions">
+                                        <option value="10000">
+                                        <option value="20000">
+                                        <option value="30000">
+                                        <option value="40000">
+                                    </datalist>
                                 </div>
 
                                 <h3 class="text-center py-3">Expenses</h3>
@@ -57,7 +65,12 @@
                                 <div>
                                     <label for="name" class="form-label px-3">Food:</label>
                                     <input type="number" placeholder="Enter Food Expense " class="bg-light"
-                                        id="food-expense" />
+                                        list="datalistOption1" id="food-expense" />
+                                    <datalist id="datalistOption1">
+                                        <option value="1000">
+                                        <option value="2000">
+                                        <option value="3000">
+                                    </datalist>
                                 </div>
 
 
@@ -65,14 +78,25 @@
 
                                     <label for="name" class="form-label px-3">Rent:</label>
                                     <input type="number" placeholder="Enter Rent Expense " class="bg-light"
-                                        id="rent-expense" />
+                                        list="datalistOption2" id="rent-expense" />
+                                    <datalist id="datalistOption2">
+                                        <option value="1000">
+                                        <option value="2000">
+                                        <option value="3000">
+                                    </datalist>
                                 </div>
 
                                 <div>
 
                                     <label for="name" class="form-label px-2">Clothes:</label>
                                     <input type="number" placeholder="Enter Clothe  Expense " class="bg-light"
-                                        id="cloth-expense" />
+                                        list="datalistOption3" id="cloth-expense" />
+                                    <datalist id="datalistOption3">
+                                        <option value="1000">
+                                        <option value="2000">
+                                        <option value="3000">
+                                    </datalist>
+
                                 </div>
 
                                 <button type="button" id="calculate-btn"
@@ -84,7 +108,12 @@
                                 <div>
                                     <label for="name" class="form-label px-2">Save:</label>
                                     <input type="text" placeholder=" Save Percents" class="bg-light w-25"
-                                        id="save-input" />
+                                        list="datalistOption4" id="save-input" />
+                                    <datalist id="datalistOption4">
+                                        <option value="20">
+                                        <option value="30">
+                                        <option value="40">
+                                    </datalist>
 
                                     <span> % </span>
 
