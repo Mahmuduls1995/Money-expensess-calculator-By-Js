@@ -1,10 +1,23 @@
+//const incomeInput = document.getElementById("input-income");
+
+const foodExpense = document.getElementById("food-expense");
+const rentExpense = document.getElementById("rent-expense");
+const clothesExpense = document.getElementById("cloth-expense");
+const incomeInput = document.getElementById("input-income");
+
+function calculateExpense() {
+    const total = parseFloat(foodExpense.value) +
+        parseFloat(rentExpense.value) +
+        parseFloat(clothesExpense.value);
+    return total;
+}
+
 const calculateExpenseBtn = document.getElementById("calculate-btn");
 calculateExpenseBtn.addEventListener('click', function () {
-    const foodExpense = document.getElementById("food-expense");
-    const rentExpense = document.getElementById("rent-expense");
-    const clothesExpense = document.getElementById("cloth-expense");
-
     if (
+        incomeInput.value < 0 ||
+        incomeInput.value == "" ||
+
         foodExpense.value == "" ||
         foodExpense.value < 0 ||
         rentExpense.value == "" ||
@@ -12,18 +25,65 @@ calculateExpenseBtn.addEventListener('click', function () {
 
         clothesExpense.value < 0 ||
         clothesExpense.value == ""
+
+
     ) {
-        console.log("sorry");
+
+        alert("Please enter Positive Valid Number")
         return;
     }
 
-    const btnFullExpense = parseFloat(foodExpense.value) +
-        parseFloat(rentExpense.value) +
-        parseFloat(clothesExpense.value);
-    //console.log(totalExpense);
+    // let btnFullExpense = parseFloat(foodExpense.value) +
+    //     parseFloat(rentExpense.value) +
+    //     parseFloat(clothesExpense.value);
+
+    let btnFullExpense = calculateExpense(foodExpense, rentExpense, clothesExpense);
 
     const totalExpense = document.getElementById("total-expense")
     totalExpense.innerText = btnFullExpense;
 
+    if (incomeInput.value > btnFullExpense) {
+
+        const totalBalance = parseFloat(incomeInput.value) - btnFullExpense;
+
+        const balance = document.getElementById("total-balance");
+        balance.innerText = totalBalance;
+    }
+    else {
+        alert("Please given More Input income ")
+        return;
+    }
 })
+
+
+
+function saveCalculateBtn() {
+    //const incomeInput = document.getElementById("input-income");
+    const saveInput = document.getElementById("save-input");
+    const savingAmount = document.getElementById("saving-amount");
+    const remainingBalance = document.getElementById("remaining-balance");
+
+    if (
+        saveInput.value < 0 ||
+        saveInput.value == ""
+    ) {
+        alert("Please enter Positive Valid Number")
+        return;
+    }
+
+    const savePercent = parseFloat(incomeInput.value) * (parseFloat(saveInput.value) / 100);
+    savingAmount.innerText = savePercent;
+
+    let btnFullExpense = calculateExpense(foodExpense, rentExpense, clothesExpense);
+
+    const totalBalance = parseFloat(incomeInput.value) - btnFullExpense;
+
+
+
+    const totalBalance = parseFloat(incomeInput.value) - btnFullExpense;
+    remainingBalance.innerText = totalBalance - savePercent;
+
+
+}
+
 
