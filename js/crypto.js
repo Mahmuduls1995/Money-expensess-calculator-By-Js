@@ -1,5 +1,3 @@
-//const incomeInput = document.getElementById("input-income");
-
 const foodExpense = document.getElementById("food-expense");
 const rentExpense = document.getElementById("rent-expense");
 const clothesExpense = document.getElementById("cloth-expense");
@@ -33,10 +31,6 @@ calculateExpenseBtn.addEventListener('click', function () {
         return;
     }
 
-    // let btnFullExpense = parseFloat(foodExpense.value) +
-    //     parseFloat(rentExpense.value) +
-    //     parseFloat(clothesExpense.value);
-
     let btnFullExpense = calculateExpense(foodExpense, rentExpense, clothesExpense);
 
     const totalExpense = document.getElementById("total-expense")
@@ -56,9 +50,7 @@ calculateExpenseBtn.addEventListener('click', function () {
 })
 
 
-
 function saveCalculateBtn() {
-    //const incomeInput = document.getElementById("input-income");
     const saveInput = document.getElementById("save-input");
     const savingAmount = document.getElementById("saving-amount");
     const remainingBalance = document.getElementById("remaining-balance");
@@ -78,11 +70,15 @@ function saveCalculateBtn() {
 
     const totalBalance = parseFloat(incomeInput.value) - btnFullExpense;
 
+    if (totalBalance > savePercent) {
+        const totalBalance = parseFloat(incomeInput.value) - btnFullExpense;
+        remainingBalance.innerText = totalBalance - savePercent;
+    }
+    else {
 
-
-    const totalBalance = parseFloat(incomeInput.value) - btnFullExpense;
-    remainingBalance.innerText = totalBalance - savePercent;
-
+        alert("Not enough balance")
+        return;
+    }
 
 }
 
